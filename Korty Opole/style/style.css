@@ -1,0 +1,161 @@
+header {
+	background-color: #ffffff;
+}
+
+#logo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#main_info {
+	margin-top: 20px;
+	background: url("../images/court2.jpg");
+	background-size: cover;
+	background-position: 80% center;
+	height: 640px;
+}
+
+#heading {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-family: 'Ubuntu', sans-serif;
+	padding-top: 230px;
+	font-size: 2.7em;
+	color: #ffffff;
+}
+
+#registration {
+	border: .15em solid #000;
+	background-color: #ffffff;
+	font-size: 2em;
+	color: #000;
+	text-align: center;
+	text-decoration: none;
+	padding: 10px;
+	font-family: 'Ubuntu', sans-serif;
+	border-radius: 10px;
+	margin-left: 30%;
+	margin-top: 40px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+#login {
+	border: .12em solid #000;
+	background-color: #ffffff;
+	font-size: 2em;
+	color: #000;
+	text-align: center;
+	text-decoration: none;
+	padding: 10px;
+	font-family: 'Ubuntu', sans-serif;
+	border-radius: 10px;
+	margin-top: 40px;
+	margin-left: 5%;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+#registration:hover{
+	background-color: #b7b2b2;
+	transition: .25s;
+}
+
+#login:hover{
+	background-color: #b7b2b2;
+	transition: .25s;
+}
+
+footer {
+	margin-top: -5px;
+	margin-bottom: 5px;
+	background-color: #4f4e4e;
+	height: 60px;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	margin-top: 5px;
+
+}
+
+ul li {
+	float: left;
+	padding-left: 20px;
+	display: inline;
+	margin-top: 20px;
+}
+
+ul li a {
+	text-decoration: none;
+	color: #ffffff;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+/*login.html**/
+#main_info2 {
+	margin-top: 20px;
+	background: url("../images/court-3.jpg");
+	background-size: cover;
+	background-position: 80% center;
+	height: 700px;
+}
+
+#login_form {
+	width: 700px;
+	height: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#login_inf {
+	position: absolute;
+	margin-left: 350px;
+}
+#login_form {
+	border: .12em solid #000;
+	background-color: #f3e9e9;
+	font-size: 2em;
+	color: #000;
+	text-align: center;
+	text-decoration: none;
+	padding: 10px;
+	font-family: 'Ubuntu', sans-serif;
+	border-radius: 10px;
+	margin-top: 40px;
+	margin-left: 5%;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+#login_form #email {
+	border: .12em solid #000;
+	border-radius: 10px;
+	padding-top: 5px;
+	padding-right: 30px;
+}
+
+#login_form #password{
+	border: .12em solid #000;
+	border-radius: 10px;
+	margin-top: 30px;
+	padding-top: 5px;
+	padding-right: 30px;	
+}
+
+#login_form #login_but {
+	border: .12em solid #000;
+	background-color: #000;
+	font-size: 1em;
+	color: #ffffff;
+	text-align: center;
+	text-decoration: none;
+	padding: 10px;
+	font-family: 'Ubuntu', sans-serif;
+	border-radius: 15px;
+	margin-top: 40px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
