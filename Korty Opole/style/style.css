@@ -26,7 +26,7 @@ header {
 	color: #ffffff;
 }
 
-#registration {
+#register {
 	border: .15em solid #000;
 	background-color: #ffffff;
 	font-size: 2em;
@@ -58,7 +58,7 @@ header {
 	padding-right: 30px;
 }
 
-#registration:hover{
+#register:hover{
 	background-color: #b7b2b2;
 	transition: .25s;
 }
@@ -95,6 +95,12 @@ ul li a {
 	color: #ffffff;
 	font-family: 'Ubuntu', sans-serif;
 }
+
+ul li a:hover {
+	color: gray;
+}
+
+
 
 /*login.html**/
 #main_info2 {
@@ -158,4 +164,86 @@ ul li a {
 	margin-top: 40px;
 	padding-left: 30px;
 	padding-right: 30px;
+}
+/**register style**/
+#main_info3 {
+	margin-top: 20px;
+	background: url("../images/registration.jpeg");
+	background-size: cover;
+	background-position: 80% center;
+	height: 700px;
+}
+
+#register_form {
+	width: 700px;
+	height: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#register_inf {
+	position: absolute;
+	margin-left: 10px;
+	margin-top: -10px;
+}
+#register_form {
+	border: .12em solid #000;
+	background-color: #f3e9e9;
+	color: #000;
+	text-align: left;
+	text-decoration: none;
+	padding: 10px;
+	font-family: 'Ubuntu', sans-serif;
+	border-radius: 10px;
+	margin-top: 20px;
+	margin-left: 5%;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+#register_form #konto {
+	margin-top: 15px;
+	margin-left: 10px;
+}
+
+#register_form #twoj_profil {
+	margin-top: 15px;
+	margin-left: 10px;
+	margin-bottom: 5px;
+}
+
+#register_form #email {
+	border: .12em solid #000;
+	border-radius: 10px;
+	padding-top: 5px;
+	padding-right: 30px;
+}
+
+#register_form #password, #register_form #password_check, #name, #surname, #telephone, #city{
+	border: .12em solid #000;
+	border-radius: 10px;
+	margin-top: 15px;
+	padding-top: 5px;
+	padding-right: 30px;	
+}
+
+
+
+#register_form #login_but {
+	border: .12em solid #000;
+	background-color: #000;
+	font-size: 1em;
+	color: #ffffff;
+	text-align: center;
+	text-decoration: none;
+	padding: 10px;
+	font-family: 'Ubuntu', sans-serif;
+	border-radius: 15px;
+	margin-top: 40px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+#register_form .text_for_input {
+	margin-left: 10px;
+	margin-right: 5px;
 }
