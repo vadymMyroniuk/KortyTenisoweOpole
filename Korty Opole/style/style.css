@@ -1,161 +1,406 @@
 header {
-	background-color: #ffffff;
+    background-color: #ffffff;
 }
 
 #logo {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #main_info {
-	margin-top: 20px;
-	background: url("../images/court2.jpg");
-	background-size: cover;
-	background-position: 80% center;
-	height: 640px;
+    margin-top: 20px;
+    background: url("../images/court2.jpg");
+    background-size: cover;
+    background-position: 80% center;
+    height: 640px;
 }
 
 #heading {
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-	font-family: 'Ubuntu', sans-serif;
-	padding-top: 230px;
-	font-size: 2.7em;
-	color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    padding-top: 230px;
+    font-size: 2.7em;
+    color: #ffffff;
 }
 
-#registration {
-	border: .15em solid #000;
-	background-color: #ffffff;
-	font-size: 2em;
-	color: #000;
-	text-align: center;
-	text-decoration: none;
-	padding: 10px;
-	font-family: 'Ubuntu', sans-serif;
-	border-radius: 10px;
-	margin-left: 30%;
-	margin-top: 40px;
-	padding-left: 30px;
-	padding-right: 30px;
+#register {
+    border: .15em solid #000;
+    background-color: #ffffff;
+    font-size: 2em;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 10px;
+    margin-left: 30%;
+    margin-top: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 #login {
-	border: .12em solid #000;
-	background-color: #ffffff;
-	font-size: 2em;
-	color: #000;
-	text-align: center;
-	text-decoration: none;
-	padding: 10px;
-	font-family: 'Ubuntu', sans-serif;
-	border-radius: 10px;
-	margin-top: 40px;
-	margin-left: 5%;
-	padding-left: 30px;
-	padding-right: 30px;
+    border: .12em solid #000;
+    background-color: #ffffff;
+    font-size: 2em;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-left: 5%;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
-#registration:hover{
-	background-color: #b7b2b2;
-	transition: .25s;
+#register:hover {
+    background-color: #b7b2b2;
+    transition: .25s;
 }
 
-#login:hover{
-	background-color: #b7b2b2;
-	transition: .25s;
+#login:hover {
+    background-color: #b7b2b2;
+    transition: .25s;
 }
 
 footer {
-	margin-top: -5px;
-	margin-bottom: 5px;
-	background-color: #4f4e4e;
-	height: 60px;
+    margin-top: -5px;
+    margin-bottom: 5px;
+    background-color: #4f4e4e;
+    height: 60px;
 }
 
 ul {
-	list-style-type: none;
-	margin: 0px;
-	padding: 0px;
-	margin-top: 5px;
-
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    margin-top: 5px;
 }
 
 ul li {
-	float: left;
-	padding-left: 20px;
-	display: inline;
-	margin-top: 20px;
+    float: left;
+    padding-left: 20px;
+    display: inline;
+    margin-top: 20px;
 }
 
 ul li a {
-	text-decoration: none;
-	color: #ffffff;
-	font-family: 'Ubuntu', sans-serif;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Ubuntu', sans-serif;
 }
+
+ul li a:hover {
+    color: gray;
+}
+
 
 /*login.html**/
+
 #main_info2 {
-	margin-top: 20px;
-	background: url("../images/court-3.jpg");
-	background-size: cover;
-	background-position: 80% center;
-	height: 700px;
+    margin-top: 20px;
+    background: url("../images/login.jpeg");
+    background-size: cover;
+    background-position: 10% center;
+    height: 700px;
 }
 
 #login_form {
-	width: 700px;
-	height: 500px;
-	margin-left: auto;
-	margin-right: auto;
+    width: 700px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 #login_inf {
-	position: absolute;
-	margin-left: 350px;
-}
-#login_form {
-	border: .12em solid #000;
-	background-color: #f3e9e9;
-	font-size: 2em;
-	color: #000;
-	text-align: center;
-	text-decoration: none;
-	padding: 10px;
-	font-family: 'Ubuntu', sans-serif;
-	border-radius: 10px;
-	margin-top: 40px;
-	margin-left: 5%;
-	padding-left: 30px;
-	padding-right: 30px;
-}
-#login_form #email {
-	border: .12em solid #000;
-	border-radius: 10px;
-	padding-top: 5px;
-	padding-right: 30px;
+    position: absolute;
+    margin-left: 350px;
 }
 
-#login_form #password{
-	border: .12em solid #000;
-	border-radius: 10px;
-	margin-top: 30px;
-	padding-top: 5px;
-	padding-right: 30px;	
+#login_form {
+    border: .12em solid #000;
+    background-color: #f3e9e9;
+    font-size: 2em;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-left: 5%;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#login_form #email {
+    border: .12em solid #000;
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-right: 50px;
+    padding: 5px;
+}
+
+#login_form #password {
+    border: .12em solid #000;
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding-top: 5px;
+    padding-right: 50px;
+    padding: 5px;
 }
 
 #login_form #login_but {
-	border: .12em solid #000;
-	background-color: #000;
-	font-size: 1em;
-	color: #ffffff;
-	text-align: center;
-	text-decoration: none;
-	padding: 10px;
-	font-family: 'Ubuntu', sans-serif;
-	border-radius: 15px;
-	margin-top: 40px;
-	padding-left: 30px;
-	padding-right: 30px;
+    border: .12em solid #000;
+    background-color: #fff;
+    font-size: 1em;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 15px;
+    margin-top: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#login_form #login_but:hover {
+    background-color: #c1c1c1;
+}
+
+
+/**register style**/
+
+#main_info3 {
+    margin-top: 20px;
+    background: url("../images/registration.jpeg");
+    background-size: cover;
+    background-position: 80% center;
+    height: 700px;
+}
+
+#register_form {
+    width: 700px;
+    height: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#register_inf {
+    position: absolute;
+    margin-left: 10px;
+    margin-top: -10px;
+}
+
+#register_form {
+    border: .12em solid #000;
+    background-color: #f3e9e9;
+    color: #000;
+    text-align: left;
+    text-decoration: none;
+    padding: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 5%;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#register_form #konto {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 1.3em;
+}
+
+#register_form #twoj_profil {
+    font-size: 1.2em;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+#register_form #email {
+    border: .12em solid #000;
+    font-size: 1.2em;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 5px;
+    padding-right: 30px;
+    padding: 5px;
+}
+
+#register_form #password,
+#register_form #password_check,
+#name,
+#surname,
+#telephone,
+#city {
+    border: .12em solid #000;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin-top: 15px;
+    padding: 5px;
+}
+
+#register_form #login_but {
+    border: .12em solid #000;
+    background-color: #fff;
+    font-size: 1.5em;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-left: 200px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#register_form #login_but:hover {
+    background-color: #b7b2b2;
+}
+
+#register_form .text_for_input {
+    margin-left: 10px;
+    margin-right: 5px;
+    font-size: 1.2em;
+}
+
+
+/***o nas style******/
+
+#main_info4 {
+    margin-top: 20px;
+    background: url("../images/onas.jpeg");
+    background-size: cover;
+    background-position: 10% center;
+    height: 700px;
+}
+
+#our_inf {
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 20%;
+    opacity: 0.9;
+    background-color: #d6d4d4;
+    height: 50%;
+    width: 60%;
+    border-radius: 10px;
+}
+
+
+/****regulamin style*********/
+
+#main_info5 {
+    margin-top: 20px;
+    background: url("../images/regulamin.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
+    /*background-position: 10% center;*/
+    height: 900px;
+}
+
+#regulamin {
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 20%;
+    opacity: 0.85;
+    background-color: #f1dfdf;
+    height: 780px;
+    width: 60%;
+    border-radius: 10px;
+}
+
+
+/******contact style***********/
+
+#main_info6 {
+    margin-top: 10px;
+    background: url("../images/contact.jpg");
+    background-size: cover;
+    background-position: 10% center;
+    height: 700px;
+}
+
+#contact_form {
+    width: 700px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#login_inf {
+    position: absolute;
+    margin-left: 23%;
+}
+
+#contact_form {
+    border: .12em solid #000;
+    background-color: #f3e9e9;
+    font-size: 2em;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    font-family: 'Libre Baskerville', serif;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 5%;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.contact {
+    border: .12em solid #000;
+    font-size: 20px;
+    font-family: 'Libre Baskerville', serif;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-right: 50px;
+    padding: 15px;
+}
+
+#contact_form #password {
+    border: .12em solid #000;
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 2px;
+    margin-top: 20px;
+    padding-top: 5px;
+    padding-right: 50px;
+    padding: 5px;
+}
+
+#contact_form #submit_but {
+    border: .12em solid #000;
+    background-color: #fff;
+    font-size: 1em;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 15px;
+    margin-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#contact_form #submit_but:hover {
+    background-color: #c1c1c1;
 }
