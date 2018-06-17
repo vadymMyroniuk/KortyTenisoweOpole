@@ -20,43 +20,62 @@ if(isset($_POST['submit_r'])):
         echo "error";
     endif;
 endif;
+?>
 
+<div id="booking_success">
+<?php
 if(isset($_POST['submit_rez'])):
 	$kort_number = $_POST['number_kort'];
 	$czas = $_POST['time'];
-	
 	$select_date_rez= $today['year']."-".$today['mon']."-".$_POST['day_k'];
 	$query = "INSERT INTO `rezerwacje`(`kort`, `date`, `uzytkownik`, `czas`) VALUES ({$kort_number},DATE_FORMAT('1999-01-01', '$select_date_rez'), {$_SESSION['uid']}, {$czas})";
 	if(mysqli_query($db, $query)):
-        echo "rezerw";
+        echo "Kort został zarezerwowany";
     else:
-        echo "Nad";
+        echo "Błąd rezerwacji";
     endif;
 endif;
-
 ?>
+</div>
+
 <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-    <input type="text" name="user_name" placeholder="User name" value="<?=$user_c['name']?>">
-    <input type="text" name="user_surname" placeholder="User Surname" value="<?=$user_c['surname']?>">
-    <input type="text" name="user_email" placeholder="User Email" value="<?=$user_c['email']?>">
-    <input type="text" name="user_city" placeholder="User city" value="<?=$user_c['city']?>">
-    <input type="text" name="user_phone" placeholder="User phone" value="<?=$user_c['phone']?>">
-    <input type="number" name="user_gender" value="<?=$user_c['gender']?>">
-    <input type="submit" name="submit_r" value="Zmień">
+    <br>
+    <span style="margin-left: 10px; font-family: Ubuntu; font-size: 1.2em;">Your username: </span><input type="text" class="user_character_info" name="user_name" value="<?=$user_c['name']?>">
+    <br>
+    <br>
+    <span style="margin-left: 10px; font-family: Ubuntu; font-size: 1.2em;">Your surname: </span><input type="text" class="user_character_info" name="user_surname" value="<?=$user_c['surname']?>">
+    <br>
+    <br>
+    <span style="margin-left: 10px; font-family: Ubuntu; font-size: 1.2em;">Your email: </span><input type="text" class="user_character_info" name="user_email" value="<?=$user_c['email']?>">
+    <br>
+    <br>
+    <span style="margin-left: 10px; font-family: Ubuntu; font-size: 1.2em;">Your city: </span><input type="text" class="user_character_info" name="user_city" value="<?=$user_c['city']?>">
+    <br>
+    <br>
+    <span style="margin-left: 10px; font-family: Ubuntu; font-size: 1.2em;">Your phone: </span><input type="text" class="user_character_info" name="user_phone" value="<?=$user_c['phone']?>">
+    <br>
+    <br>
+    <input type="submit" class="user_character_info" style="margin-left: 150px;" name="submit_r" value="Zmień">
 </form>
 
-<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-    <select name="day">
+<div class="actual_bookings">
+<form action="<?=$_SERVER['PHP_SELF']?>" method="post" id="today_bookings">
+    <h1 style="font-size: 1.5em; font-family: 'Ubuntu';">Aktualne rezerwacje</h1>
+    <br>
+    <span style="font-size: 1.2em; font-family: 'Ubuntu';">Dzień</span>
+    <select name="day" style="font-size: 1.1em;">
         <?php for($i=$today['mday']; $i<31;$i++) {
         echo "<option value=".$i.">".$i."</option>";
         }
         ?>
     </select>
-    <input type="submit" name="submit_t" value="send">
-
+    <br>
+    <br>
+    <input type="submit" name="submit_t" value="Sprawdż" class="check_actual_res">
 </form>
-<br/>
-<div  style=" background-color:white">
+</div>
+
+<div id="actual_courts">
 <?php 
 if(isset($_POST['submit_t'])):   
     $select_date= $today['year']."-".$today['mon']."-".$_POST['day'];
@@ -64,14 +83,13 @@ if(isset($_POST['submit_t'])):
 	$result_t = mysqli_query($db, $query);
 	if ($result_t){
 		while ($row = mysqli_fetch_assoc($result_t)):
-			echo "id: {$row['id']} - kort: #{$row['kort']} - godzina:{$row['czas']} :<br/>";
+			echo "id: {$row['id']} - kort: #{$row['kort']} - godzina:{$row['czas']}<br/>";
 		endwhile;
 	}
 else{
 	echo "Nie ma rezerw<br/>";
 }
 endif;
-
 	?>
 </div>
 <!--<table border="1" bgcolor="blue">
@@ -93,29 +111,43 @@ endif;
     
 
 </table> -->
-<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-	Godzina
-	<select name="time" placeholder="Czas">
-	<?php for($i=$today['hours']+1; $i<21;$i++) {
+<form action="<?=$_SERVER['PHP_SELF']?>" method="post" class="booking_form">
+    <h1 style="font-family: Ubuntu;">Rezerwacja kortu</h1>
+	<span style="font-size: 1.2em; font-family: 'Ubuntu';">Godzina</span>
+	<select name="time" style="font-size: 1.1em;">
+    <?php for($i=$today['hours']+1; $i<21;$i++) {
         echo "<option value=".$i.">".$i."</option>";
         }
-        ?>
-	</select>
-	
-	<input type="number" name="number_kort" value="" placeholder="Numer kortu">
-	Dzien
-	<select name="day_k">
+    ?>
+    </select>
+
+
+    <br>
+    <br>
+    <span style="font-size: 1.2em; font-family: 'Ubuntu';">Numer kortu: </span>
+    <input type="number" style="font-size: 1.1em;" name="number_kort" min=1 max=5 value="1">
+    <br>
+    <br>
+    <span style="font-size: 1.2em; font-family: 'Ubuntu';">Dzien: </span>
+	<select name="day_k" style="font-size: 1.1em;">
         <?php for($i=$today['mday']; $i<31;$i++) {
         echo "<option value=".$i.">".$i."</option>";
         }
         ?>
     </select>
-	<input type="submit" name="submit_rez" value="rezerwuj">
+    <br>
+	<input type="submit" name="submit_rez" id="zarezerwuj" value="Zarezerwuj">
 </form>
+
 <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-	<input type="submit" name="submit_mrez" value="moje rezerwacje">
+	<input type="submit" id="my_reservations" name="submit_mrez" value="moje rezerwacje" 
+    style="position: absolute; left: 1050px; bottom: 300px;">
 </form>
-<div style=" background-color:white">
+
+
+<div style="margin-left: 900px;
+    position: absolute;
+    top: 570px; font-size: 1.3em; font-family: 'Ubuntu'; ">
 <?php
 if(isset($_POST['submit_mrez'])){
 	$select_date= $today['year']."-".$today['mon']."-".$today['mday'];
@@ -123,8 +155,8 @@ if(isset($_POST['submit_mrez'])){
 	$result_moj = mysqli_query($db, $query);
 	if($result_moj){
 		while ($row1 = mysqli_fetch_assoc($result_moj)){
-			echo "id: {$row1['id']} kort: #{$row1['kort']} godzina: {$row1['czas']} <br/>";
-		}
+			echo "nr rezerwacji: {$row1['id']}; nr kortu: {$row1['kort']}; godzina rezerwacji: {$row1['czas']};<br/>";
+		} 
 	}
 	else{
 		echo "Nie ma rezerw<br/>";
@@ -132,19 +164,22 @@ if(isset($_POST['submit_mrez'])){
 }
 ?>
 </div>
+
+<div id="kort_usun">
 <?php
 if(isset($_POST['submit_dell'])){
 	$id = $_POST['number_rez'];
 	$query = "DELETE FROM `rezerwacje` WHERE `id` = {$id} and `uzytkownik`={$user_c['id']}";
 	if(mysqli_query($db, $query)):
-        echo "deleted";
+        echo "Twoja rezerwacja została usunięta";
     else:
         echo "error";
     endif;
 }
 ?>
+</div>
 
-<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-	<input type="number" name="number_rez" value="" placeholder="Numer rezerwacji">
-	<input type="submit" name="submit_dell" value="usunąć rezerwacje">
+<form action="<?=$_SERVER['PHP_SELF']?>" method="post" class="booking_form_my_bookings">
+	<input type="number" name="number_rez" min=1 id="nr_rezerwacji"  value="" placeholder="Numer rezerwacji">
+	<input type="submit" name="submit_dell" value="Usunąć rezerwacje" id="nr_rezerwacji">
 </form>
