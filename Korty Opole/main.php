@@ -24,8 +24,8 @@ endif;
         <header>
             <a href="index.php"><img id="logo" src="images/logo.png" width="200px"></a>
         </header>
-        <div id="main_info">
-            <a href="/logout.php">Log out</a>
+        <div id="main_info_php">
+            <a href="logout.php"><button class="user_character_info">Wyloguj się</button></a>
 <?php
 switch ($_SESSION['state']):
 case 1:
@@ -39,7 +39,7 @@ default:
     break;
 endswitch;
 ?>
-        </div>
+     </div>
         <footer>
             <ul>
                 <li><a href="onas.html">O nas</a></li>

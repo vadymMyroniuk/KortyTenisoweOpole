@@ -404,3 +404,110 @@ ul li a:hover {
 #contact_form #submit_but:hover {
     background-color: #c1c1c1;
 }
+
+/***********main.php***************/
+#main_info_php {
+    margin-top: 20px;
+    background: url("../images/main.jpg");
+    background-size: cover;
+    background-position: 80% center;
+    height: 640px;
+}
+
+.user_character_info {
+    margin-left: 10px;
+    border: .12em solid #000;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin-top: 15px;
+    padding: 5px;
+}
+
+.booking_form {
+    position: absolute;
+    top: 180px;
+    left: 900px;
+}
+
+.booking_form_my_bookings {
+    margin-left: 400px;
+    top: 700px;
+}
+
+#my_reservations {
+    margin-left: 10px;
+    border: .12em solid #000;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin-top: 15px;
+    padding: 5px;
+}
+
+#zarezerwuj {
+    margin-left: 100px;
+    border: .12em solid #000;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin-top: 15px;
+    padding: 5px;
+}
+#nr_rezerwacji {
+    border: .12em solid #000;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin-top: 15px;
+    padding: 5px;
+}
+#del_reservation{
+    border: .12em solid #000;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin-top: 15px;
+    padding: 5px;
+}
+#booking_success{
+    color:green;
+    font-size: 1.2em;
+    font-family: 'Ubuntu', sans-serif;
+    position: absolute;
+    left: 950px;
+    top: 440px;
+}
+
+#kort_usun{
+    color:#ff0000;
+    font-size: 1.2em;
+    font-family: 'Ubuntu', sans-serif;
+    position: absolute;
+    left: 1000px;
+    top: 520px;
+}
+
+.actual_bookings {
+    position: absolute;
+    right: 100px;
+    top: 200px;
+}
+
+.check_actual_res {
+    border: .12em solid #000;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin-top: 15px;
+    padding: 5px;
+    margin-left: 30px;
+}
+
+#actual_courts{
+    position: absolute;
+    right: 150px;
+    top: 400px;
+    font-style: 'Ubuntu';
+    font-size: 1.3em;
+}

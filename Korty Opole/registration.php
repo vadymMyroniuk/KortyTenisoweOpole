@@ -72,7 +72,6 @@ else:
                     <br>
                     <input type="radio" name="accept" value="accepted"><span class="text_for_input">Wyrażam zgodę na przetwarzanie danych osobowych</span>
                     <br>
-					<?php include('errors.php'); ?>
                     <br>
                     <input type="submit" id="login_but" name="reg_user" value="Zarejestruj się">
                 </form>
