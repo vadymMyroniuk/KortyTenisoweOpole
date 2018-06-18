@@ -13,7 +13,7 @@ if(isset($_POST['submit'])):
 
         if (mysqli_num_rows($results) == 1) {
             $user = mysqli_fetch_assoc($results);
-            $_SESSION['username'] = $user['email'];
+            $_SESSION['username'] = $user['name'];
             $_SESSION['state'] = $user['state'];
             $_SESSION['email'] = $email;
             $_SESSION['uid'] = $user['id'];

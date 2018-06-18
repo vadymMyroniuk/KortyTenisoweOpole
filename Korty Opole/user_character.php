@@ -27,12 +27,19 @@ if(isset($_POST['submit_rez'])):
 	$kort_number = $_POST['number_kort'];
 	$czas = $_POST['time'];
 	$select_date_rez= $today['year']."-".$today['mon']."-".$_POST['day_k'];
+	$query1 = "SELECT * FROM `rezerwacje` WHERE `kort` ={$kort_number} AND `date` = DATE_FORMAT('1999-01-01', '$select_date_rez') and  `czas` = {$czas} LIMIT 1; "; 
+	$results= mysqli_query($db, $query1);
+	if (mysqli_num_rows($results) > 0) {
+	echo "rezerwacja istnieje";
+	}
+    else{
 	$query = "INSERT INTO `rezerwacje`(`kort`, `date`, `uzytkownik`, `czas`) VALUES ({$kort_number},DATE_FORMAT('1999-01-01', '$select_date_rez'), {$_SESSION['uid']}, {$czas})";
 	if(mysqli_query($db, $query)):
         echo "Kort został zarezerwowany";
     else:
         echo "Błąd rezerwacji";
     endif;
+	}
 endif;
 ?>
 </div>
@@ -78,11 +85,11 @@ endif;
 <?php 
 if(isset($_POST['submit_t'])):   
     $select_date= $today['year']."-".$today['mon']."-".$_POST['day'];
-    $query = "SELECT `id`, `kort`, `czas` FROM `rezerwacje` WHERE `date` = DATE_FORMAT('1999-01-01', '$select_date') ORDER BY `rezerwacje`.`kort` ASC";
+    $query = "SELECT * FROM `rezerwacje` WHERE `date` = DATE_FORMAT('1999-01-01', '$select_date') ORDER BY `rezerwacje`.`kort` ASC";
 	$result_t = mysqli_query($db, $query);
 	if ($result_t){
 		while ($row = mysqli_fetch_assoc($result_t)):
-			echo "id: {$row['id']} - kort: #{$row['kort']} - godzina:{$row['czas']}<br/>";
+			echo "id: {$row['id']} - kort: #{$row['kort']} - godzina:{$row['czas']} - data: {$row['date']}<br/>";
 		endwhile;
 	}
 else{
@@ -150,11 +157,11 @@ endif;
 <?php
 if(isset($_POST['submit_mrez'])){
 	$select_date= $today['year']."-".$today['mon']."-".$today['mday'];
-	$query = "SELECT `id`, `kort`, `czas`, `date` FROM `rezerwacje` WHERE `date` >= DATE_FORMAT('1999-01-01', '$select_date') and `uzytkownik`={$user_c['id']} ORDER BY `rezerwacje`.`date` ASC";
+	$query = "SELECT * FROM `rezerwacje` WHERE `date` >= DATE_FORMAT('1999-01-01', '$select_date') and `uzytkownik`={$user_c['id']} ORDER BY `rezerwacje`.`date` ASC";
 	$result_moj = mysqli_query($db, $query);
 	if($result_moj){
 		while ($row1 = mysqli_fetch_assoc($result_moj)){
-			echo "nr rezerwacji: {$row1['id']}; nr kortu: {$row1['kort']}; godzina rezerwacji: {$row1['czas']};<br/>";
+			echo "nr rezerwacji: {$row1['id']}; nr kortu: {$row1['kort']}; godzina rezerwacji: {$row1['czas']}; data: {$row1['date']};<br/>";
 		} 
 	}
 	else{
