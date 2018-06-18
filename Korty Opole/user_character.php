@@ -33,7 +33,7 @@ if(isset($_POST['submit_rez'])):
 	echo "rezerwacja istnieje";
 	}
     else{
-	$query = "INSERT INTO `rezerwacje`(`kort`, `date`, `uzytkownik`, `czas`) VALUES ({$kort_number},DATE_FORMAT('1999-01-01', '$select_date_rez'), {$_SESSION['uid']}, {$czas})";
+	$query = "INSERT INTO `rezerwacje`(`kort`, `date`, `uzytkownik`, `czas`) VALUES ({$kort_number},DATE_FORMAT('1999-01-01', '$select_date_rez'), {$user_c['id']}, {$czas})";
 	if(mysqli_query($db, $query)):
         echo "Kort został zarezerwowany";
     else:

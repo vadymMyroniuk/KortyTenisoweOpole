@@ -1,5 +1,5 @@
 <?php
-$q = "SELECT * FROM `uzytkownicy` WHERE `id`=".$_SESSION['uid'];
+$q = "SELECT * FROM `uzytkownicy` WHERE `email`='{$_SESSION['email']}';
 $result = mysqli_query($db, $q);
 $user_c = mysqli_fetch_assoc($result);
 $today = getdate();
