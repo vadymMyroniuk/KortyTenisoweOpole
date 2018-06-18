@@ -9,20 +9,23 @@ if(isset($_POST['reg_user'])):
     $surname =  mysqli_real_escape_string($db, $_POST['surname']);
     $phone = mysqli_real_escape_string($db, $_POST['phone']);
     $city = mysqli_real_escape_string($db, $_POST['city']);
-        $password = md5($password_1);//encrypt the password before saving in the database
+    $password = md5($password_1);
 
-        //$query = "INSERT INTO `uzytkownicy` ('name', 'email', 'password', 'surname', 'state', 'city', 'phone', 'gender' ) 
-  		//	  VALUES({$username}, {$email}, $password, $surname, 'q123',$city, $phone,$gender)";
+    $query = "INSERT INTO `uzytkownicy` ('name', 'email', 'password', 'surname', 'state', 'city', 'phone' ) 
+  			  VALUES('{$username}', '{$email}', '{$password}', '{$surname}', '3','{$city}', '{$phone}');";
         $query = "INSERT INTO `uzytkownicy` (`id`, `name`, `surname`, `email`, `password`, `city`, `phone`, `state`) 
             VALUES (NULL, '".$username."', '".$surname."', '".$email."', '".$password."', '".$city."', '".$phone."', '3');";
-        if(mysqli_query($db, $query)):
+        if(mysqli_query($db, $query)){
+		echo "Welcome";
         $_SESSION['username'] = $username;
         $_SESSION['state'] = $user['state'];
         $_SESSION['email'] = $email;
         $_SESSION['success'] = "You are now logged in";
-        header('location: main.php');
-        endif;
-else:
+        header('location: main.php');}
+		else{
+		echo "Jakiś błąd";}
+endif;
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -83,6 +86,3 @@ else:
         </footer>
     </main>
 </body>
-<?php
-endif;
-?>

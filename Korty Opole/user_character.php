@@ -1,5 +1,5 @@
 <?php
-$q = "SELECT * FROM `uzytkownicy` WHERE `id`=".$_SESSION['uid'];
+$q = "SELECT * FROM `uzytkownicy` WHERE `email`='{$_SESSION['email']}'";
 $result = mysqli_query($db, $q);
 $user_c = mysqli_fetch_assoc($result);
 $today = getdate();
@@ -10,13 +10,13 @@ if(isset($_POST['submit_r'])):
     $phone = mysqli_real_escape_string($db, $_POST['user_phone']);
     $city = mysqli_real_escape_string($db, $_POST['user_city']);
 
-	$query = "UPDATE `uzytkownicy` SET `name` ='{$username}', `surname` = '{$surname}',`email`='{$email}',`city` = '{$city}',`phone` = '{$phone}' WHERE `id`= {$_SESSION['uid']}  ;";
+	$query = "UPDATE `uzytkownicy` SET `name` ='{$username}', `surname` = '{$surname}',`email`='{$email}',`city` = '{$city}',`phone` = '{$phone}' WHERE `id`= {$user_c['id']}  ;";
 //    $query = "INSERT INTO `uzytkownicy` (`id`, `name`, `surname`, `email`, `city`, `phone`, 'state`, `gender`)
 //                VALUES (NULL, '".$username."', '".$surname."', '".$email."','".$city."', '".$phone."', '".$_POST['state']."', '".$gender."');";
     if(mysqli_query($db, $query)):
-        echo "update";
+        echo "Zmiana zostala zapisana";
     else:
-        echo "error";
+        echo "error zminy danych";
     endif;
 endif;
 ?>
@@ -89,7 +89,7 @@ if(isset($_POST['submit_t'])):
 	$result_t = mysqli_query($db, $query);
 	if ($result_t){
 		while ($row = mysqli_fetch_assoc($result_t)):
-			echo "id: {$row['id']} - kort: #{$row['kort']} - godzina:{$row['czas']} - data: {$row['date']}<br/>";
+			echo "id: {$row['id']} - kort: #{$row['kort']} - godzina:{$row['czas']} <br/>";
 		endwhile;
 	}
 else{
