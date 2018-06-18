@@ -26,6 +26,7 @@ endif;
         </header>
         <div id="main_info_php">
             <a href="logout.php"><button class="user_character_info">Wyloguj się</button></a>
+		
 <?php
 switch ($_SESSION['state']):
 case 1:

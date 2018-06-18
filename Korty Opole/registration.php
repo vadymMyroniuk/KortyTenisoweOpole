@@ -8,15 +8,13 @@ if(isset($_POST['reg_user'])):
     $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
     $surname =  mysqli_real_escape_string($db, $_POST['surname']);
     $phone = mysqli_real_escape_string($db, $_POST['phone']);
-    $gender = $_POST['gender'];//mysqli_real_escape_string($db, $_POST['gender']);
     $city = mysqli_real_escape_string($db, $_POST['city']);
-
         $password = md5($password_1);//encrypt the password before saving in the database
 
-        $query = "INSERT INTO `uzytkownicy` ('name', 'email', 'password', 'surname', 'state', 'city', 'phone', 'gender' ) 
-  			  VALUES($username, $email, $password, $surname, 'q123',$city, $phone,$gender)";
-        $query = "INSERT INTO `uzytkownicy` (`id`, `name`, `surname`, `email`, `password`, `city`, `phone`, `state`, `gender`) 
-            VALUES (NULL, '".$username."', '".$surname."', '".$email."', '".$password."', '".$city."', '".$phone."', '3', '".$gender."');";
+        //$query = "INSERT INTO `uzytkownicy` ('name', 'email', 'password', 'surname', 'state', 'city', 'phone', 'gender' ) 
+  		//	  VALUES({$username}, {$email}, $password, $surname, 'q123',$city, $phone,$gender)";
+        $query = "INSERT INTO `uzytkownicy` (`id`, `name`, `surname`, `email`, `password`, `city`, `phone`, `state`) 
+            VALUES (NULL, '".$username."', '".$surname."', '".$email."', '".$password."', '".$city."', '".$phone."', '3');";
         if(mysqli_query($db, $query)):
         $_SESSION['username'] = $username;
         $_SESSION['state'] = $user['state'];
@@ -64,9 +62,6 @@ else:
                     <br>
                     <span class="text_for_input">miasto</span><input type="text" id="city" name="city">
                     <br>
-                    <br>
-                    <span class="text_for_input">płeć</span><input type="radio" name="gender" value="1"><span style="font-size: 1.2em;">Mężczyzna</span>
-                    <input type="radio" name="gender" value="0"><span style="font-size: 1.2em;">Kobieta</span>
                     <br>
                     <br>
                     <br>

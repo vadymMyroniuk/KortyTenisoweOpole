@@ -52,11 +52,11 @@ endif;?>
 <?php 
 if(isset($_POST['submit_t'])):   
     $select_date= $today['year']."-".$today['mon']."-".$_POST['day'];
-    $query = "SELECT `id`, `kort`, `czas` FROM `rezerwacje` WHERE `date` = DATE_FORMAT('1999-01-01', '$select_date') ORDER BY `rezerwacje`.`kort` ASC";
+    $query = "SELECT * FROM `rezerwacje` WHERE `date` = DATE_FORMAT('1999-01-01', '$select_date') ORDER BY `rezerwacje`.`kort` ASC";
 	$result_t = mysqli_query($db, $query);
 	if ($result_t){
 		while ($row = mysqli_fetch_assoc($result_t)):
-			echo "id: {$row['id']} - kort: #{$row['kort']} - godzina: {$row['czas']} <br/>";
+			echo "id: {$row['id']} - kort: #{$row['kort']} - godzina: {$row['czas']} - data: {$row['date']} <br/>";
 		endwhile;
 	}
 else{
@@ -66,3 +66,21 @@ endif;
 
 ?>
 </div>
+<div id="kort_usun">
+<?php
+if(isset($_POST['submit_dell'])){
+	$id = $_POST['number_rez'];
+	$query = "DELETE FROM `rezerwacje` WHERE `id` = {$id} ;";
+	if(mysqli_query($db, $query)):
+        echo "Rezerwacja została usunięta";
+    else:
+        echo "Błąd usuwania rezerwacji";
+    endif;
+}
+?>
+</div>
+
+<form action="<?=$_SERVER['PHP_SELF']?>" method="post" class="booking_form_my_bookings">
+	<input type="number" name="number_rez" min=1 id="nr_rezerwacji"  value="" placeholder="Numer rezerwacji">
+	<input type="submit" name="submit_dell" value="Usunąć rezerwacje" id="nr_rezerwacji">
+</form>

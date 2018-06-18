@@ -7,11 +7,10 @@ if(isset($_POST['submit_r'])):
     $username = mysqli_real_escape_string($db, $_POST['user_name']);
     $email = mysqli_real_escape_string($db, $_POST['user_email']);
     $surname =  mysqli_real_escape_string($db, $_POST['user_surname']);
-    $phone = "";
-    $gender = $_POST['user_gender'];//mysqli_real_escape_string($db, $_POST['gender']);
+    $phone = mysqli_real_escape_string($db, $_POST['user_phone']);
     $city = mysqli_real_escape_string($db, $_POST['user_city']);
 
-	$query = "UPDATE `uzytkownicy` set `name` ='{$username}', `surname` = '{$surname}',`email`='{$email}',`city` = '{$city}',`phone` = {$phone},`gender' = {$gender} WHERE `id`= {$_SESSION['uid']}  ";
+	$query = "UPDATE `uzytkownicy` SET `name` ='{$username}', `surname` = '{$surname}',`email`='{$email}',`city` = '{$city}',`phone` = '{$phone}' WHERE `id`= {$_SESSION['uid']}  ;";
 //    $query = "INSERT INTO `uzytkownicy` (`id`, `name`, `surname`, `email`, `city`, `phone`, 'state`, `gender`)
 //                VALUES (NULL, '".$username."', '".$surname."', '".$email."','".$city."', '".$phone."', '".$_POST['state']."', '".$gender."');";
     if(mysqli_query($db, $query)):
@@ -46,7 +45,7 @@ endif;
     <span style="margin-left: 10px; font-family: Ubuntu; font-size: 1.2em;">Your surname: </span><input type="text" class="user_character_info" name="user_surname" value="<?=$user_c['surname']?>">
     <br>
     <br>
-    <span style="margin-left: 10px; font-family: Ubuntu; font-size: 1.2em;">Your email: </span><input type="text" class="user_character_info" name="user_email" value="<?=$user_c['email']?>">
+    <span style="margin-left: 10px; font-family: Ubuntu; font-size: 1.2em;">Your email: </span><input type="email" class="user_character_info" name="user_email" value="<?=$user_c['email']?>">
     <br>
     <br>
     <span style="margin-left: 10px; font-family: Ubuntu; font-size: 1.2em;">Your city: </span><input type="text" class="user_character_info" name="user_city" value="<?=$user_c['city']?>">
@@ -115,7 +114,7 @@ endif;
     <h1 style="font-family: Ubuntu;">Rezerwacja kortu</h1>
 	<span style="font-size: 1.2em; font-family: 'Ubuntu';">Godzina</span>
 	<select name="time" style="font-size: 1.1em;">
-    <?php for($i=$today['hours']+1; $i<21;$i++) {
+    <?php for($i=8; $i<21;$i++) {
         echo "<option value=".$i.">".$i."</option>";
         }
     ?>
